@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style type="text/css">
+        div.box1 {
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            border: solid 2px #C4C4C4;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 16px;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div style="margin: 50px; font-size: 30px;">開發中，不要急~~</div> -->
+    <div id="reader" width="600px" height="600px"></div>
+
+    <div id="app">
+        <v-app id="inspire">
+            <v-container fluid>
+                {{test}}
+            </v-container>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script>
+        Vue.config.productionTip = false;
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data: () => ({
+                test: "11",
+            }),
+        })
+    </script>
+    <script>
+        function onScanSuccess(decodedText, decodedResult) {
+            // handle the scanned code as you like, for example:
+            console.log(`Code matched = ${decodedText}`, decodedResult);
+        }
+
+        function onScanFailure(error) {
+            // handle scan failure, usually better to ignore and keep scanning.
+            // for example:
+            console.warn(`Code scan error = ${error}`);
+        }
+
+        let html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader",
+            { fps: 10, qrbox: { width: 250, height: 250 } },
+  /* verbose= */ false);
+
+        html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+        console.log("hello")
+    </script>
+</body>
+
+</html>
