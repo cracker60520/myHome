@@ -1,7 +1,55 @@
-<html>
-    <head>
-    </head>
-    <body>
-        Hello World!!!
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+        #countdown {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Countdown Timer</h2>
+        <div id="countdown">424 hours remaining</div>
+        <img src="https://example.com/your-image.jpg" alt="Your Image">
+        <p>Person's Name</p>
+    </div>
+
+    <script>
+        // Set the countdown target date (current date + 424 hours)
+        const targetDate = new Date();
+        targetDate.setHours(targetDate.getHours() + 424);
+
+        // Update the countdown every second
+        const countdownElement = document.getElementById('countdown');
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        function updateCountdown() {
+            const now = new Date();
+            const difference = targetDate - now;
+
+            // Calculate remaining hours, minutes, and seconds
+            const hours = Math.floor(difference / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            // Update the countdown display
+            countdownElement.textContent = `${hours} hours ${minutes} minutes ${seconds} seconds remaining`;
+
+            // If the countdown is finished, clear the interval
+            if (difference <= 0) {
+                clearInterval(countdownInterval);
+                countdownElement.textContent = 'Countdown expired';
+            }
+        }
+    </script>
+</body>
 </html>
+
