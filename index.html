@@ -70,7 +70,7 @@ function updateCountdown() {
   const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
   // Update the countdown display
-  countdownElement.innerHTML = `倒數 : ${days}d ${hours}h ${minutes}m ${seconds}s`;
+  countdownElement.innerHTML = `倒數 : ${days}天 ${hours}時 ${minutes}分 ${seconds}秒`;
 
   // If the countdown is finished, display a message
   if (difference <= 0) {
