@@ -56,6 +56,9 @@
         Your browser does not support the audio element.
     </audio>
 
+    <!-- 播放/暂停按钮 -->
+    <button onclick="toggleAudio()">播放/暂停</button>
+
     <script>
     // Set the target date (June 20, 2024 at 5:30 PM)
     const targetDate = new Date('June 20, 2024 17:30:00').getTime();
@@ -83,13 +86,17 @@
         countdownElement.innerHTML = 'Countdown expired';
       }
     }
-    </script>
-    <script>
-        // 在加载完成后自动播放音乐
-        window.onload = function() {
-            var audio = document.getElementById("music");
+    // 获取音频元素
+    var audio = document.getElementById("myAudio");
+
+    // 播放/暂停音乐的函数
+    function toggleAudio() {
+        if (audio.paused) {
             audio.play();
-        };
+        } else {
+            audio.pause();
+        }
+    }
     </script>
   </body>
 </html>
