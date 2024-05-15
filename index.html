@@ -72,7 +72,7 @@
       }
     }
     // 等待用户触摸屏幕后自动播放音乐
-    $("html").one('touchstart', function(){
+    document.addEventListener('touchstart', function(){
         var audio = document.getElementById('myAudio');
         audio.play();
     });
