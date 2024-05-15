@@ -45,22 +45,16 @@
       </article>
       <footer class="footer">
         <p>
-          -閃電柔3-
+          -閃電柔2-
         </p>
       </footer>
     </main>
 
-    <h1>播放音乐示例</h1>
-    <p>点击下面的按钮播放/暂停音乐：</p>
-
     <!-- 播放器控件 -->
-    <audio id="myAudio" controls>
+    <audio autoplay>
         <source src="music.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
-
-    <!-- 播放/暂停按钮 -->
-    <button onclick="toggleAudio()">播放/暂停</button>
 
     <script>
     // Set the target date (June 20, 2024 at 5:30 PM)
@@ -89,17 +83,11 @@
         countdownElement.innerHTML = 'Countdown expired';
       }
     }
-    // 获取音频元素
-    var audio = document.getElementById("myAudio");
-
-    // 播放/暂停音乐的函数
-    function toggleAudio() {
-        if (audio.paused) {
-            audio.play();
-        } else {
-            audio.pause();
-        }
-    }
+    // 在加载完成后自动播放音乐
+    window.onload = function() {
+        var audio = document.querySelector("audio");
+        audio.play();
+    };
     </script>
   </body>
 </html>
