@@ -71,6 +71,12 @@
         countdownElement.innerHTML = '快滾，傻逼!!!';
       }
     }
+
+    // 在加载完成后自动播放音乐
+    window.onload = function() {
+        var audio = document.getElementById("myAudio");
+        audio.play();
+    };
   </script>
 </body>
 </html>
