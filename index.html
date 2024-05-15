@@ -48,17 +48,13 @@
           -閃電柔-
         </p>
       </footer>
+      <!-- 播放器控件 -->
+      <audio id="myAudio" controls>
+          <source src="music.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+      </audio>
     </main>
-
-    <!-- 播放器控件 -->
-    <audio id="myAudio" controls>
-        <source src="music.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-
-    <!-- 播放/暂停按钮 -->
-    <button onclick="toggleAudio()">播放/暂停</button>
-
+    
     <script>
     // Set the target date (June 20, 2024 at 5:30 PM)
     const targetDate = new Date('June 20, 2024 17:30:00').getTime();
