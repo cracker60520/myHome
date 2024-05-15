@@ -45,13 +45,13 @@
       </article>
       <footer class="footer">
         <p>
-          -閃電柔2-
+          -閃電柔1-
         </p>
       </footer>
     </main>
 
     <!-- 播放器控件 -->
-    <audio autoplay>
+    <audio id="myAudio" autoplay>
         <source src="music.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
@@ -85,7 +85,8 @@
     }
     // 在加载完成后自动播放音乐
     window.onload = function() {
-        var audio = document.querySelector("audio");
+        // 获取音频元素
+        var audio = document.getElementById("myAudio");
         audio.play();
     };
     </script>
