@@ -45,7 +45,7 @@
       </article>
       <footer class="footer">
         <p>
-          -閃電柔1-
+          -閃電柔-
         </p>
       </footer>
     </main>
@@ -83,12 +83,13 @@
         countdownElement.innerHTML = 'Countdown expired';
       }
     }
-    // 在加载完成后自动播放音乐
-    window.onload = function() {
-        // 获取音频元素
-        var audio = document.getElementById("myAudio");
-        audio.play();
-    };
+    </script>
+    <script>
+        // 在加载完成后自动播放音乐
+        window.onload = function() {
+            var audio = document.getElementById("music");
+            audio.play();
+        };
     </script>
   </body>
 </html>
