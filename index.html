@@ -1,80 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>珍重再見</title>
-    <link rel="stylesheet" href="styles.css" type="text/css" />
-    <style>
-      #countdown {
-          font-size: 36px;
-          font-weight: bold;
-          text-align: center;
-          margin-top: 10px;
-          color: #333;
-          text-shadow: 2px 2px 4px #aaa;
-          animation: pulse 1s infinite alternate;
-      }
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-        }
-        100% {
-          transform: scale(1.1);
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <main id="main" class="main">
-      <!-- .header -->
-      <header class="header">
-        <h1 class="title" id="title">Sharon-Huang</h1>
-        <p class="title-description">號稱 SAG 最漂亮的</p>
-        <figure class="media" id="div-img">
-          <h1 id="countdown">424 hours remaining</h1>
-          <img
-            class="media__img"
-            id="image"
-            src="S__6537285.jpg"
-            alt="Dr. Normal Borlaug seen standing in Mexican wheat field 
-          with a group of biologists"
-          />
-          <figcaption id="img-caption" class="media__caption">
-            
-          </figcaption>
-        </figure>
-      </header>
-      <!-- tribute-info -->
-      <article class="tribute-info" id="tribute-info">
-        <h3 class="headline">座右銘</h3>
-        <!-- .list-of-time -->
-        <blockquote class="quote">
-          <p>
-            我不胖，我只是胖了點!
-          </p>
-          <cite>-- I'm not fat,I'm just a little fat.</cite>
-        </blockquote>
-      </article>
-      <footer class="footer">
-        <p>
-          -閃電柔-
-        </p>
-      </footer>
-    </main>
-    <div style="text-align: center;">
-      <audio id="myAudio" controls>
-        <source src="music.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
-    
-    <script>
-    // Set the target date (June 20, 2024 at 5:30 PM)
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>珍重再見</title>
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  <style>
+    #countdown {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+      color: #333;
+      text-shadow: 2px 2px 4px #aaa;
+      animation: pulse 1s infinite alternate;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+  <main id="main" class="main">
+    <header class="header">
+      <h1 class="title" id="title">Sharon-Huang</h1>
+      <p class="title-description">號稱 SAG 最漂亮的</p>
+      <figure class="media" id="div-img">
+        <h1 id="countdown">424 hours remaining</h1>
+        <img class="media__img" id="image" src="S__6537285.jpg" alt="Dr. Normal Borlaug seen standing in Mexican wheat field with a group of biologists">
+        <figcaption id="img-caption" class="media__caption"></figcaption>
+      </figure>
+    </header>
+    <article class="tribute-info" id="tribute-info">
+      <h3 class="headline">座右銘</h3>
+      <blockquote class="quote">
+        <p>我不胖，我只是胖了點!</p>
+        <cite>-- I'm not fat, I'm just a little fat.</cite>
+      </blockquote>
+    </article>
+    <footer class="footer">
+      <p>-閃電柔-</p>
+    </footer>
+  </main>
+  <div style="text-align: center;">
+    <audio id="myAudio" controls>
+      <source src="music.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  
+  <script>
     const targetDate = new Date('June 20, 2024 17:30:00').getTime();
-
-    // Update the countdown every second
     const countdownElement = document.getElementById('countdown');
     const countdownInterval = setInterval(updateCountdown, 1000);
     
@@ -82,21 +59,18 @@
       const now = new Date().getTime();
       const difference = targetDate - now;
 
-      // Calculate remaining days, hours, minutes, and seconds
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-      // Update the countdown display
       countdownElement.innerHTML = `上班倒數:<br>${days}天 ${hours}時 ${minutes}分 ${seconds}秒`;
 
-      // If the countdown is finished, display a message
       if (difference <= 0) {
         clearInterval(countdownInterval);
         countdownElement.innerHTML = '快滾，傻逼!!!';
       }
     }
-    </script>
-  </body>
+  </script>
+</body>
 </html>
