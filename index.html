@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>!!!珍重再見</title>
+  <title>Goodbye Everyone!</title>
   <link rel="stylesheet" href="styles.css" type="text/css">
   <style>
     #countdown {
@@ -11,7 +11,7 @@
       font-weight: bold;
       text-align: center;
       margin-top: 30px;
-      color: #CC8688;
+      color: #5A3E3E;
       animation: pulse 1s infinite alternate;
     }
     @keyframes pulse {
@@ -19,7 +19,7 @@
       100% { transform: scale(1.3); }
     }
     #textColor{
-      color: #CC8688;
+      color: #5A3E3E;
     }
     .media__img {
       margin-bottom: 10px; /* 調整您想要的間距大小 */
@@ -29,8 +29,8 @@
 <body>
   <main class="main">
     <header class="header">
-      <h1 id="textColor" class="title">Sharon-Huang</h1>
-      <p class="title-description">號稱 SAG 最漂亮的</p>
+      <h1 id="textColor" class="title">Kevin-Wu</h1>
+      <p class="title-description">職場社畜</p>
       <div style="text-align: center; margin-top: 10pt;">
         <audio id="myAudio" autoplay>
           <source src="music.mp3" type="audio/mp3">
@@ -39,25 +39,24 @@
       </div>
       <h1 id="countdown">424 hours remaining</h1>
       <figure class="media">
-        <img class="media__img" src="S__6537285.jpg">
-        <img class="media__img" src="1334.jpg">
-        <img class="media__img" src="1350.jpg">
+        <img class="media__img" src="2024010401.jpg">
+        <img class="media__img" src="2024010402.jpg">
       </figure>
     </header>
     <article class="tribute-info" id="tribute-info">
       <h3 id="textColor" class="headline">座右銘</h3>
       <blockquote class="quote">
-        <p>我不胖，我只是胖了點!</p>
-        <cite>-- I'm not fat, I'm just a little fat.</cite>
+        <p>拿著幾千的工資，幹著幾萬的活，這叫千薪萬苦。</p>
+        <cite>-- This is the fucking work.</cite>
       </blockquote>
     </article>
     <footer class="footer">
-      <p>-閃電柔-</p>
+      <p>-Kevin-</p>
     </footer>
   </main>
   
   <script>
-    const targetDate = new Date('June 20, 2024 17:30:00').getTime();
+    const targetDate = new Date('Mar 31, 2025 17:30:00').getTime();
     const countdownElement = document.getElementById('countdown');
     const countdownInterval = setInterval(updateCountdown, 1000);
     
@@ -74,7 +73,7 @@
 
       if (difference <= 0) {
         clearInterval(countdownInterval);
-        countdownElement.innerHTML = '快滾，傻逼!!!';
+        countdownElement.innerHTML = 'Bye Bye';
       }
     }
     // 觸摸手機螢幕自動播放音樂
